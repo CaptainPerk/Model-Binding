@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcModels.Models.Enumerations;
+using System;
 
 namespace MvcModels.Models
 {
