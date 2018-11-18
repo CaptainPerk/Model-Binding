@@ -30,5 +30,7 @@ namespace MvcModels.Controllers
         public ViewResult Create(Person model) => View("Index", model);
 
         public ViewResult DisplaySummary([Bind(nameof(AddressSummary.City), Prefix = nameof(Person.HomeAddress))]AddressSummary summary) => View(summary);
+
+        public ViewResult Names(string[] names) => View(names ?? new string[0]);
     }
 }
