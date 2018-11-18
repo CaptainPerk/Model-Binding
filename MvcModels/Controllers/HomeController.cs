@@ -36,6 +36,6 @@ namespace MvcModels.Controllers
 
         public ViewResult Address(IList<AddressSummary> addresses) => View(addresses ?? new List<AddressSummary>());
 
-        public string Header([FromHeader(Name = "Accept-Language")] string accept) => $"Header: {accept}";
+        public ViewResult Header(HeaderModel model) => View(model);
     }
 }
