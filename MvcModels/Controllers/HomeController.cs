@@ -37,5 +37,10 @@ namespace MvcModels.Controllers
         public ViewResult Address(IList<AddressSummary> addresses) => View(addresses ?? new List<AddressSummary>());
 
         public ViewResult Header(HeaderModel model) => View(model);
+
+        public ViewResult Body() => View();
+
+        [HttpPost]
+        public Person Body([FromBody] Person model) => model;
     }
 }
