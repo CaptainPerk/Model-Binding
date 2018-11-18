@@ -29,6 +29,6 @@ namespace MvcModels.Controllers
         [HttpPost]
         public ViewResult Create(Person model) => View("Index", model);
 
-        public ViewResult DisplaySummary([Bind(Prefix = nameof(Person.HomeAddress))]AddressSummary summary) => View(summary);
+        public ViewResult DisplaySummary([Bind(nameof(AddressSummary.City), Prefix = nameof(Person.HomeAddress))]AddressSummary summary) => View(summary);
     }
 }
