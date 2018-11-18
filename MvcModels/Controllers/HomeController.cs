@@ -14,7 +14,7 @@ namespace MvcModels.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int? id)
+        public IActionResult Index([FromQuery]int? id)
         {
             Person person;
             if (id.HasValue && (person = _repository[id.Value]) != null)
@@ -35,5 +35,12 @@ namespace MvcModels.Controllers
         public ViewResult Names(IList<string> names) => View(names ?? new List<string>());
 
         public ViewResult Address(IList<AddressSummary> addresses) => View(addresses ?? new List<AddressSummary>());
+
+        public ViewResult Header(HeaderModel model) => View(model);
+
+        public ViewResult Body() => View();
+
+        [HttpPost]
+        public Person Body([FromBody] Person model) => model;
     }
 }
